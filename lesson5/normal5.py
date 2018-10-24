@@ -14,18 +14,18 @@ def console_utility():
 			if answer == 1:
 				folder_name = input('Введите имя папки:')
 				easy.move_dir(folder_name)
-				input('Нажмите любую клавишу для продолжения')
+				
 			elif answer == 2:
 				easy.list_dir(os.getcwd())
-				input('Нажмите любую клавишу для продолжения')
+				
 			elif answer == 3:
 				folder_name = input('Введите имя папки:')
 				easy.del_dir(folder_name)
-				input('Нажмите любую клавишу для продолжения')
+				
 			elif answer == 4:
 				folder_name = input('Введите имя папки:')
 				easy.new_dir(folder_name)
-				input('Нажмите любую клавишу для продолжения')
+				
 			else:
 				print('Неверный номер пункта. Попробуйте еще раз')
 		except KeyboardInterrupt:
