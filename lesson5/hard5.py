@@ -48,7 +48,7 @@ def move_to_dir():
         return
     try:
         os.chdir(os.path.abspath(dir_name))
-        print('успешно перешли в папку {}'.format(os.getcwd()))
+        print('успешно перешли в папку {}'.format(dir_name))
     except OSError:
         print('ошибка во время перемещения')
 
@@ -82,20 +82,23 @@ do = {
     "ls" : list_path
 }
 
-try:
-    dir_name = sys.argv[2]
-except IndexError:
-    dir_name = None
+while len(sys.argv) > 1:
+    try:
+        dir_name = sys.argv[2]
+        sys.argv.pop(2)
+    except IndexError:
+        dir_name = None
 
-try:
-    key = sys.argv[1]
-except IndexError:
-    key = None
+    try:
+        key = sys.argv[1]
+        sys.argv.pop(1)
+    except IndexError:
+        key = None
 
 
-if key:
-    if do.get(key):
-        do[key]()
-    else:
-        print("Задан неверный ключ")
-        print("Укажите ключ help для получения справки")
+    if key:
+        if do.get(key):
+            do[key]()
+        else:
+            print("Задан неверный ключ")
+            print("Укажите ключ help для получения справки")
