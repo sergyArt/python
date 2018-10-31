@@ -40,15 +40,13 @@ class Worker:
 
 
 
+if __name__ == '__main__':
+    lst = []
+    with open('workers','r') as file:
+        for linenum,line in enumerate(file):
+            if linenum > 0:
+                lst.append(Worker(line))
 
 
-
-lst = []
-with open('workers','r') as file:
-    for linenum,line in enumerate(file):
-        if linenum > 0:
-            lst.append(Worker(line))
-
-
-for i in lst:
-    i.get_salary()
+    for i in lst:
+        i.get_salary()

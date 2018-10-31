@@ -70,29 +70,32 @@ teacher2 = Teacher('Игорь','Петров','Сергеевич','9А','фи�
 teacher3 = Teacher('Дмитрий','Ивашкин','Вячеславович','9Б 7А','литература')
 teachers = [teacher1,teacher2,teacher3]
 
-class_school = []
-for i in students:
-    class_school.append(i.class_room)
-print('В школе имеются классы: ', list(set(class_school)))
-
-print('Список учеников класса {}: '.format('7Б'))
-for id,i in enumerate(students):
-    if i.class_room == '7Б':
-        print(id,'. ',i.get_full_name())
-
-print('Список предметов для ученика {}: '.format(student1.get_full_name()))
-for i in teachers:
-    student1.get_subjects(i)
 
 
-print('Родители ученика {}'.format(student1.get_full_name()))
-student1.get_parents
+if __name__ == '__main__':
+    class_school = []
+    for i in students:
+        class_school.append(i.class_room)
+    print('В школе имеются классы: ', list(set(class_school)))
+
+    print('Список учеников класса {}: '.format('7Б'))
+    for id,i in enumerate(students):
+        if i.class_room == '7Б':
+            print(id,'. ',i.get_full_name())
+
+    print('Список предметов для ученика {}: '.format(student1.get_full_name()))
+    for i in teachers:
+        student1.get_subjects(i)
 
 
-print('Список учителей, преподающих в классе {}:'.format('9Б'))
-for i in teachers:
-    if i.teach_this_class('9Б'):
-        print(i.get_full_name())
+    print('Родители ученика {}'.format(student1.get_full_name()))
+    student1.get_parents
+
+
+    print('Список учителей, преподающих в классе {}:'.format('9Б'))
+    for i in teachers:
+        if i.teach_this_class('9Б'):
+            print(i.get_full_name())
 
 
 

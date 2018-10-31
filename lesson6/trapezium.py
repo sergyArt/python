@@ -17,7 +17,7 @@ class Trapezium():
         self._bd = math.sqrt((self._xd - self._xb)**2 + (self._yd - self._yb)**2)
 
 
-    def is_trapezium_ravn(self):
+    def is_trapezium_equipolar(self):
         return True if self._ac == self._bd else False
 
 
@@ -34,7 +34,7 @@ class Trapezium():
 
 if __name__== '__main__':
     trapezium = Trapezium([[1,1],[2,3],[4,3],[5,1]])
-    print('Is trapezium ravn ',trapezium.is_trapezium_ravn())
+    print('Is trapezium ravn ',trapezium.is_trapezium_equipolar())
     print('Square is = ',trapezium.square())
     a,b,c,d = trapezium.len_line()
     print('Lens is a={} b={} c={} d={}'.format(a,b,c,d))

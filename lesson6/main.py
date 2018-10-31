@@ -4,17 +4,18 @@ from trapezium import Trapezium
 
 
 if __name__ == '__main__':
-    print('Rectangle')
+    print('Треугольник')
     rectangle = Rectangle(1, 9, 4, 3, 5, 7)
-    print('Square = ', rectangle.square())
-    print('Higth = ', rectangle.higth())
-    print('Perimatr = ', rectangle.perimetr())
+    print('Площадь треугольника = ', rectangle.square())
+    print('Высота = ', rectangle.higth())
+    print('Периметр = ', rectangle.perimetr())
 
 
     print('Trapezuim')
     trapezium = Trapezium([[1, 1], [2, 3], [4, 3], [5, 1]])
-    print('Is trapezium ravn ', trapezium.is_trapezium_ravn())
-    print('Square is = ', trapezium.square())
+    print('Трапеция равнобочная? ', trapezium.is_trapezium_equipolar())
+    print('Площадь трапеции = ', trapezium.square())
     a, b, c, d = trapezium.len_line()
-    print('Lens is a={} b={} c={} d={}'.format(a, b, c, d))
+    print('Длины сторон трапеции a={} b={} c={} d={}'.format(a, b, c, d))
+    print('Периметр трапеции =',trapezium.perimetr())
 
